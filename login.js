@@ -1,6 +1,6 @@
 const loginButton = document.getElementById('login-button');
-const clientId = '1307426758492160040';
-const redirectUri = 'https://derzyy1.github.io/dev-web/index.html';
+const clientId = '1104362178968047639';
+const redirectUri = 'https://czechblueline.xyz/auth_callback.php';
 
 loginButton.addEventListener('click', () => {
   const scope = 'identify guilds.members.read';
