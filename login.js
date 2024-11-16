@@ -1,6 +1,6 @@
 const loginButton = document.getElementById('login-button');
 const clientId = '1307426758492160040';
-const redirectUri = 'https://mestozlin.xyz/auth_callback.php';
+const redirectUri = 'https://derzyy1.github.io/dev-web/index.html';
 
 loginButton.addEventListener('click', () => {
   const scope = 'identify guilds.members.read';
