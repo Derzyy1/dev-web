@@ -3,34 +3,36 @@ var countDownDate = new Date("December 25, 2021").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
+    // Get today's date and time
+    var now = new Date().getTime();
     
-  // Find the distance between now and the count down date
-  var diff = new Date(now - countDownDate);
-    
-  // Time calculations for days, hours, minutes and seconds
-  var years = diff.getUTCFullYear() - 1970;
-  var months = diff.getUTCMonth();
-  var days = diff.getUTCDate() - 1;
+    // Calculate the total difference in milliseconds
+    var diff = now - countDownDate;
 
-let output = [];
+    // Time calculations
+    var years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+    diff -= years * 1000 * 60 * 60 * 24 * 365.25;
 
-if (years > 0) {
-	output.push(years + ' LETY');
-}
+    var months = Math.floor(diff / (1000 * 60 * 60 * 24 * (365.25 / 12)));
+    diff -= months * 1000 * 60 * 60 * 24 * (365.25 / 12);
 
-if (months > 0) {
-output.push(months + ' MĚSÍCI A ');
-}
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-if (days > 0) {
-output.push(days + ' DNY');
-}
+    let output = [];
 
-output = output.join(' ');
-console.log(output);
-document.getElementById('timer').innerHTML = output;
-    
+    if (years > 0) {
+        output.push(years + " LETY");
+    }
+
+    if (months > 0) {
+        output.push(months + " MĚSÍCI");
+    }
+
+    if (days > 0) {
+        output.push(days + " DNY");
+    }
+
+    output = output.join(" ");
+    console.log(output);
+    document.getElementById('timer').innerHTML = output;
 }, 1000);
